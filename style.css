@@ -1,0 +1,457 @@
+/* =========================
+   RESET & ROOT
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --container: 1100px;
+  --accent: #ff6b35;
+  --muted: #2d54a3;
+  --bg: #f7fafc;
+  --card: #ffffff;
+  --radius: 12px;
+}
+
+/* =========================
+   LAYOUT & BASE
+========================= */
+body {
+  background: url("img/cakeshop.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: "Inter", Arial, sans-serif;
+  color: #111827;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: -1;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* =========================
+   HEADER
+========================= */
+.site-header {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.brand .dot {
+  color: var(--accent);
+}
+
+/* NAVIGATION */
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--muted);
+  padding: 0.5rem;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  padding: 3rem 0;
+  background: linear-gradient(
+    135deg,
+    #fff5f8 0%,
+    #fff0d9 40%,
+    #ffecf9 100%
+  );
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.6rem;
+  color: #0e1e41;
+}
+
+.hero-text p,
+.lead {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 0;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn.ghost {
+  border: 1px solid #e5e7eb;
+  color: var(--muted);
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* Hero Card */
+.hero-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(17,24,39,0.06);
+}
+
+.card-img {
+  height: 160px;
+  background: linear-gradient(90deg, #ffd1b3, #ffd9d0);
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+  padding: 3rem 0;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+  color: #111827;
+}
+
+.alt {
+  background: #fff;
+}
+
+/* About Grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.feature {
+  padding: 1rem;
+  background: var(--card);
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.product {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.prod-img {
+  height: 120px;
+  background: linear-gradient(90deg, #e6f6ff, #dbeafe);
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--muted);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  margin-top: 0.3rem;
+}
+
+.form-notice {
+  margin-top: 0.6rem;
+  color: green;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.site-footer {
+  background: #df9ebc;
+  color: #cbd5e1;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid,
+  .cards,
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Mobile Nav */
+  .nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    right: 1rem;
+    flex-direction: column;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .site-header {
+    padding: 0.25rem 0;
+  }
+}
+/* =========================
+   PRODUK IMAGE REAL
+========================= */
+
+.prod-img.RedVelvet {
+  background-image: url("img/redvelvet.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.prod-img.ChocolateLava {
+  background-image: url("img/coklat.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.prod-img.CaramelCake {
+  background-image: url("img/caramel.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.prod-img.StrawberryCake {
+  background-image: url("img/strawbery.jpg"); /* nama file kamu */
+  background-size: cover;
+  background-position: center;
+}
+
+.prod-img.TaroCake {
+  background-image: url("img/taro.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.prod-img.PandanCake {
+  background-image: url("img/pandan.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.prod-img.CheeseCake {
+  background-image: url("img/chese.jpg"); /* file kamu: chese.jpg */
+  background-size: cover;
+  background-position: center;
+}
+
+.prod-img.MatchaCake {
+  background-image: url("img/macha.jpg"); /* file kamu: macha.jpg */
+  background-size: cover;
+  background-position: center;
+}
+
+.prod-img.RainbowCake {
+  background-image: url("img/rainbow.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.card-img {
+  height: 160px;
+  background-image: url("img/redvelvet.jpg");
+  background-size: cover;
+  background-position: center;
+  border-bottom: 3px solid #ffb3b3;
+}
+.cart-box {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: white;
+  padding: 1rem;
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.cart-box ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.cart-box li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+#pay-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+/* ANIMASI saat Add Cart ditekan */
+.add-cart {
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.add-cart:active {
+  transform: scale(0.9);
+  opacity: 0.7;
+}
+
+/* TOMBOL + dan - */
+.qty-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.qty-btn {
+  padding: 4px 10px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.qty-text {
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Tombol delete */
+.delete-btn {
+  color: red;
+  cursor: pointer;
+  margin-left: 6px;
+}

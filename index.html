@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CakeShop — Fresh & Sweet</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- WAJIB DI SINI -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+ 
+  <div id="cart-box" class="cart-box">
+    <h2>Keranjang Belanja</h2>
+    <ul id="cart-list"></ul>
+    <p id="total">Total: Rp 0</p>
+    <button id="pay-btn">Bayar Sekarang</button>
+  </div>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">CakeShop Chrisya<span class="dot">.</span></a>
+      <nav class="nav" id="nav">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang</a>
+        <a href="#services">Menu</a>
+        <a href="#products">Produk</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="toggle menu">☰</button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>CakeShop — Fresh & Sweet Everyday</h1>
+          <p>Buat momen manismu spesial dengan kue rumahan kami — segar, cantik, dan lezat setiap hari.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#contact">Pesan Sekarang</a>
+            <a class="btn ghost" href="#products">Lihat Menu</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="card-img"></div>
+          <div class="card-body">
+            <h3>Kue Spesial Hari Ini</h3>
+            <p>Coba kue dari bahan premium, dibuat segar setiap pagi.</p>
+            <button class="btn" id="demoBtn">Lihat Cakes
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section container">
+      <h2 class="section-title">Tentang CakeShop</h2>
+      <p class="lead">Kami adalah bakery rumahan yang menyajikan kue-kue manis dengan sentuhan estetika kemasan profesional.</p>
+
+      <div class="about-grid">
+        <div class="feature">
+          <h4>Visi</h4>
+          <p>Mewarnai hari dengan rasa yang membuat bahagia.</p>
+        </div>
+        <div class="feature">
+          <h4>Misi</h4>
+          <p>Menggunakan bahan terbaik, trik pembuatan yang higienis, dan tampilan yang menggoda.</p>
+        </div>
+        <div class="feature">
+          <h4>Nilai</h4>
+          <p>Keaslian rasa, kepuasan pelanggan, dan konsistensi.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Menu & Layanan</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Kue Tart Custom</h3>
+            <p>Desain kue sesuai tema acara — ulang tahun, pernikahan, atau korporat.</p>
+          </article>
+          <article class="card">
+            <h3>Kue Harian</h3>
+            <p>Kue kering & basah yang dipanggang setiap hari untuk menjaga kesegaran.</p>
+          </article>
+          <article class="card">
+            <h3>Katering Roti</h3>
+            <p>Pesanan besar untuk event dan meeting, dengan pengiriman terjadwal.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+   <!-- PRODUCTS -->
+<section id="products" class="section container">
+  <h2 class="section-title">Kue Favorit Kami</h2>
+
+  <div class="product-grid">
+
+    <div class="product">
+  <div class="prod-img RedVelvet"></div>
+  <h4>Red Velvet Slice</h4>
+  <p>Lembut, merah menggoda dengan krim keju.</p>
+
+  <button class="btn primary add-cart"
+    data-name="Red Velvet Slice"
+    data-price="35000"
+    data-id="redvelvet">
+    Tambah ke Keranjang
+  </button>
+</div>
+
+    <div class="product">
+      <div class="prod-img ChocolateLava"></div>
+      <h4>Chocolate Lava</h4>
+      <p>Penuh cokelat, cocok untuk pencinta cokelat.</p>
+
+      <button class="btn primary add-cart"
+    data-name="Chocolate Lava"
+    data-price="67000"
+    data-id="ChocolateLava">
+    Tambah ke Keranjang
+  </button>
+    </div>
+
+    <div class="product">
+      <div class="prod-img CaramelCake"></div>
+      <h4>CaramelCake</h4>
+      <p>Lapisan yang manis saat dimakan.</p>
+      <button class="btn primary add-cart"
+    data-name="CaramelCake"
+    data-price="45000"
+    data-id="CaramelCake">
+    Tambah ke Keranjang
+  </button>
+    </div>
+
+    <div class="product">
+      <div class="prod-img StrawberryCake"></div>
+      <h4>StrawberryCake</h4>
+      <p>Lapisan stroberi segar dan krim ringan.</p>
+
+      <button class="btn primary add-cart"
+    data-name="StrawberryCake"
+    data-price="70000"
+    data-id="StrawberryCake">
+    Tambah ke Keranjang
+  </button>
+    </div>
+
+    <div class="product">
+      <div class="prod-img TaroCake"></div>
+      <h4>TaroCake</h4>
+      <p>Rasa Taro yang enak.</p>
+      <button class="btn primary add-cart"
+    data-name="TaroCake"
+    data-price="120000"
+    data-id="TaroCake">
+    Tambah ke Keranjang
+  </button>
+    </div>
+
+    <div class="product">
+      <div class="prod-img PandanCake"></div>
+      <h4>PandanCake</h4>
+      <p>Lapisan-lapisan yang enak saat dimakan.</p>
+      <button class="btn primary add-cart"
+    data-name="PandanCake"
+    data-price="82000"
+    data-id="PandanCake">
+    Tambah ke Keranjang
+  </button>
+    </div>
+
+    <div class="product">
+      <div class="prod-img CheeseCake"></div>
+      <h4>CheeseCake</h4>
+      <p>Lapisan keju yang meleleh di mulut.</p>
+      <button class="btn primary add-cart"
+    data-name="CheeseCake"
+    data-price="70000"
+    data-id="CheeseCake">
+    Tambah ke Keranjang
+  </button>
+    </div>
+
+    <div class="product">
+      <div class="prod-img MatchaCake"></div>
+      <h4>MatchaCake</h4>
+      <p>Lapisan matcha lembut yang menutup cake.</p>
+      <button class="btn primary add-cart"
+    data-name="MatchaCake"
+    data-price="89000"
+    data-id="MatchaCake">
+    Tambah ke Keranjang
+  </button>
+    </div>
+
+    <div class="product">
+      <div class="prod-img RainbowCake"></div>
+      <h4>RainbowCake</h4>
+      <p>Lapisan cake seperti pelangi.</p>
+      <button class="btn primary add-cart"
+    data-name="RainbowCake"
+    data-price="69000"
+    data-id="RainbowCake">
+    Tambah ke Keranjang
+  </button>
+    </div>
+
+  </div>
+</section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section-title">Kontak & Pemesanan</h2>
+
+        <div class="contact-grid">
+          <form id="contactForm" class="contact-form">
+            <label>Nama<input type="text" name="name" required></label>
+            <label>Email / WA<input type="email" name="email" required></label>
+            <label>Pesan<textarea name="message" rows="5" required></textarea></label>
+
+            <button type="submit" class="btn primary">Kirim Pesan</button>
+            <p class="form-notice" id="formNotice"></p>
+          </form>
+
+          <div class="contact-info">
+            <h3>Alamat</h3>
+            <p>Jl. Saronsong No. 22, Kota Manado</p>
+            <h3>Telepon / WA</h3>
+            <p>+62 812 3456 7890</p>
+            <h3>Jam Operasional</h3>
+            <p>Senin–Minggu 07:00–19:00</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> CakeShop Elisabeth Koho.</p>
+    </div>
+  </footer>
+
+  <!-- FILE JS -->
+  <script src="script.js"></script>
+</body>
+</html>
